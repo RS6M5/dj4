@@ -1,6 +1,7 @@
-from django.urls import path
-from . import views  # Corrected import statement
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('', views.new),  # Use views.index to refer to the view function
+    path('admin/', admin.site.urls),
+    path('news/', include('news.urls')),
 ]
